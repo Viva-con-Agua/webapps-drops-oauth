@@ -1,6 +1,6 @@
-name := """play-scala-starter-example"""
+name := """webapps-drops-oauth"""
 
-version := "1.0-SNAPSHOT"
+version := "1.0.0"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
@@ -13,3 +13,10 @@ crossScalaVersions := Seq("2.11.12", "2.12.6")
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
 libraryDependencies += "com.h2database" % "h2" % "1.4.197"
+
+// exposing the play ports
+dockerExposedPorts := Seq(9000, 9443)
+
+dockerRepository := Some("vivaconagua")
+version in Docker := version.value
+
