@@ -3,6 +3,8 @@
 # ~~~~
 
 
+GET        /                        controllers.HomeController.userTest
+
 GET        /identity                controllers.DropsController.frontendLogin
 
 GET        /authenticate/:provider  controllers.DropsController.authenticate(provider, route: Option[String], ajax: Option[Boolean])
