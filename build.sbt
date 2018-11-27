@@ -4,6 +4,9 @@ version := "1.0.0"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
+//resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+//resolvers += "Sonatype OSS Staging" at "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+resolvers += "Sonatype OSS Releases" at "https://oss.sonatype.org/content/repositories/releases/"
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 scalaVersion := "2.12.6"
@@ -14,10 +17,7 @@ libraryDependencies += ehcache
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
 libraryDependencies += "com.h2database" % "h2" % "1.4.197"
-
-resolvers += "Sonatype OSS Releases" at "https://oss.sonatype.org/service/local/staging/deploy/maven2"
-
-libraryDependencies += "org.vivaconagua" %% "play2-oauth-client" % "0.4.1"
+libraryDependencies += "org.vivaconagua" %% "play2-oauth-client" % "0.4.3"
 
 // exposing the play ports
 dockerExposedPorts := Seq(9000, 9443)
